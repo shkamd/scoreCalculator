@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+.body{
+    width: 75%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px auto;
+}
+.title{
+    font-size: 30px;
+    font-weight: 600;
+    margin: 50px 0px 40px 0px;
+    color: #008075;
+}
+.overs-select-container, .select-innings-div, .second-innings-div{
+    width: 100%;
+    margin-bottom: 50px;
+}
+.select-overs-text{
+    font-size: 14px;
+    font-weight: 400;
+    color: #404040;
+    margin-bottom: 15px;
+}
+.overs-input{
+    display: block;
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.20);
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    padding: 15px 0px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+.overs-change-div{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.overs-inc-btn, .overs-dec-btn{
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    font-size: 50px;
+    cursor: pointer;
+}
+.overs-inc-btn{
+    background: #a3ffb4;
+}
+.overs-dec-btn{
+    background: #ffa1a1;
+}
+.select-innings-div, .second-innings-div{
+    margin-bottom: 0px;
+}
+.first-innings-btn, .second-innings-btn{
+    width: 100%;
+    height: 62.5px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    display: block;
+    margin-bottom: 25px;
+    font-size: 15px;
+    font-weight: 500;
+    background: #e4c8ff;
+    cursor: pointer;
+}
+.second-innings-div{
+    display: none;
+}
+.enter-target-input{
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 62.5px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.20);
+    padding: 0px 20px;
+    font-weight: 600;
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.enter-target-input::placeholder{
+    font-size: 20px;
+    line-height: 62.5px;
+}
+.start-btn, .back-btn{
+    display: none;
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 62.5px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    background: #8fffa4;
+    cursor: pointer;
+}
+.back-btn{
+    display: block;
+    background: #ffcbcb;
+}
