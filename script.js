@@ -21,15 +21,18 @@ function changeOvers(condition){
 
 const selectInningsDiv = document.querySelector('.select-innings-div');
 const secondInningsDiv = document.querySelector('.second-innings-div');
+const creditsBox = document.querySelector('.credits');
 
 function showSecondInningsDiv(){
     selectInningsDiv.style.display = "none";
     secondInningsDiv.style.display = "block";
+    creditsBox.style.display = "none";
 }
 
 function showSelectInningsDiv(){
     selectInningsDiv.style.display = "block";
     secondInningsDiv.style.display = "none";
+    creditsBox.style.display = "block";
 }
 
 const enterTargetInput = document.querySelector('.enter-target-input');
