@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="scoreCalculator.css">
+    <title>Document</title>
+</head>
+<body>
+   <div class="score-div">
+    <p class="scoreandwickets"><span id="score">0</span><span> - </span><span id="wickets">0</span></p>
+    <p class="oversandtotalovers"><span id="overs">0.0</span> (<span id="totalovers">0</span>)</p>
+    <p id="ballsLeft"  class="targetText"><span id="ballsLeftValueA">48</span> Balls left</p>
+    <p id="targetText" class="targetText">Need <span id="targetScore">24</span> Runs in <span id="ballsLeftValueB">13</span> Balls</p>
+   </div>
+   <div class="control-div">
+    <button onclick="updateScore('One')">1</button>
+    <button onclick="updateScore('Two')">2</button>
+    <button onclick="updateScore('Wide')" style="background: rgb(133, 102, 0); color: white;">Wd</button>
+    <button onclick="updateScore('Three')">3</button>
+    <button onclick="updateScore('Four')" style="background: #008074; color: white;">4</button>
+    <button onclick="updateScore('Six')" style="background: #e07800; color: white;">6</button>
+    <button onclick="updateScore('NoBall')" style="background: rgb(133, 102, 0); color: white;">NB</button>
+    <button onclick="updateScore('Dot')">0</button>
+    <button onclick="updateScore('Wicket')" style="background: #c50000; color: white;">W</button>
+   </div>
+    <button class="end-btns" style="background: #0e0000; color: white;" onclick="deleteBall()">Delete previous ball</button>
+    <button class="end-btns" style="background: #c50000; color: white;" onclick="endMatch()">End this match</button>
+    <div class="popup-div">
+        <div class="blackscreen"></div>
+        <div class="main-container">
+            <p id="pop-up-text">
+                Are you sure want to end this match ?
+            </p>
+            <button class="pop-up-btn" id="puba" onclick="closeMatch()">
+                Yes, End this match
+            </button>
+            <button class="pop-up-btn" id="pubb" onclick="reset()">
+                No, Delete previous ball
+            </button>
+            <button class="pop-up-btn" id="pubc" onclick="reset()">
+                Yes, Delete previous ball
+            </button>
+            <button class="pop-up-btn" id="pubd" onclick="closePopup()">
+                cancel
+            </button>
+        </div>
+    </div>
+    <script>
+        var score = parseInt(localStorage.getItem('score')) || 0;
+        document.getElementById('score').innerHTML = score;
+        var overBall = parseInt(localStorage.getItem('overBall')) || 0;
+        var overs = parseInt(localStorage.getItem('overs')) || 0;
+        document.getElementById('overs').innerHTML = overs+"."+overBall;
+        var wickets = parseInt(localStorage.getItem('wickets')) || 0;
+        document.getElementById('wickets').innerHTML = wickets;
+        var totalovers = parseInt(localStorage.getItem('selectedOvers')) || 0;
+        document.getElementById('totalovers').innerHTML = totalovers;
+        var targetScore = parseInt(localStorage.getItem('target')) || null;
+        document.getElementById('targetScore').innerHTML = targetScore;
+        var ballsLeft = parseInt(localStorage.getItem('ballsLeft')) || totalovers*6;
+        document.getElementById('ballsLeftValueA').innerHTML = ballsLeft;
+        document.getElementById('ballsLeftValueB').innerHTML = ballsLeft;
+    </script>
+    <script src="scoreCalculator.js"></script> 
+</body>
+</html>

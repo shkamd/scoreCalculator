@@ -41,12 +41,16 @@ function startCalculator(condition){
     if(condition=='first-innings'){
         localStorage.setItem('selectedOvers',selectedOvers);
         localStorage.removeItem('target');
+        localStorage.setItem('targetType','first')
+        localStorage.setItem("uniqueId",generateString(6));
         window.location.href = 'scoreCalculator.html';
     }else
     if(condition=='second-innings'){
         target = enterTargetInput.value;
         localStorage.setItem('selectedOvers',selectedOvers);
         localStorage.setItem('target',target);
+        localStorage.setItem('targetType','second')
+        localStorage.setItem("uniqueId",generateString(6));
         window.location.href = 'scoreCalculator.html';
     }
 }
@@ -63,4 +67,17 @@ function enableStartButton(){
         backBtn.style.display = "block";
         startBtn.style.display = "none";
     }
+}
+
+// program to generate random strings
+
+// declare all characters
+const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+function generateString(length) {
+    let result = ' ';
+    const charactersLength = characters.length;
+    for ( let i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
 }
