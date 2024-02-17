@@ -1,6 +1,6 @@
-if(!localStorage.getItem('uniqueId')){
-    window.location.href = 'index.html';
-}
+// if(!localStorage.getItem('uniqueId')){
+//     window.location.href = 'index.html';
+// }
 var isWicket = false;
 var score = parseInt(localStorage.getItem('score')) || 0;
 var wickets = parseInt(localStorage.getItem('wickets')) || 0;
